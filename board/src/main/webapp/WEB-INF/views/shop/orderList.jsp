@@ -43,6 +43,7 @@
 										<fmt:formatNumber pattern="###,###,###" value="${orderList.amount}" />
 										원
 									</p>
+									<p><span>상태</span>${orderList.delivery }</p>
 								</div>
 							</li>
 						</c:forEach>

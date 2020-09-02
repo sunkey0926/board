@@ -2,5 +2,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <h1 class="title">
-	<a href="/">Board Admin</a>
+	<a href="/admin/index">Board Admin</a>
 </h1>

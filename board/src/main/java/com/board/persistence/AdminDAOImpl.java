@@ -11,6 +11,9 @@ import com.board.domain.CategoryVO;
 import com.board.domain.GoodsVO;
 import com.board.domain.GoodsViewVO;
 import com.board.domain.MemberVO;
+import com.board.domain.OrderListVO;
+import com.board.domain.OrderVO;
+import com.board.domain.ReplyListVO;
 
 @Repository
 public class AdminDAOImpl implements AdminDAO {
@@ -56,6 +59,43 @@ public class AdminDAOImpl implements AdminDAO {
 		sql.delete(namespace + ".goodsDelete", gdsNum);
 	}
 	
+	// 주문 목록
+	@Override
+	public List<OrderVO> orderList() throws Exception {
+		return sql.selectList(namespace + ".orderList");
+	}
+
+	// 특정 주문 목록
+	@Override
+	public List<OrderListVO> orderView(OrderVO order) throws Exception {
+		return sql.selectList(namespace + ".orderView", order);
+	}
+
+	// 배송 상태
+	@Override
+	public void delivery(OrderVO order) throws Exception {
+		sql.update(namespace + ".delivery", order);
+		
+	}
+
+	// 상품 수량 조절
+	@Override
+	public void changeStock(GoodsVO goods) throws Exception {
+		sql.update(namespace + ".changeStock", goods);
+	}
+
+	// 모든 소감(댓글)
+	@Override
+	public List<ReplyListVO> allReply() throws Exception {
+		return sql.selectList(namespace + ".allReply");
+	}
+
+	// 댓글 삭제
+	@Override
+	public void deleteReply(int repNum) throws Exception {
+		sql.delete(namespace + ".deleteReply", repNum);
+	}
 	
+
 
 }

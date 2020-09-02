@@ -11,6 +11,9 @@ import com.board.domain.CategoryVO;
 import com.board.domain.GoodsVO;
 import com.board.domain.GoodsViewVO;
 import com.board.domain.MemberVO;
+import com.board.domain.OrderListVO;
+import com.board.domain.OrderVO;
+import com.board.domain.ReplyListVO;
 import com.board.persistence.AdminDAO;
 import com.board.persistence.MemberDAO;
 
@@ -55,6 +58,45 @@ public class AdminServiceImpl implements AdminService {
 	public void goodsDelete(int gdsNum) throws Exception {
 		dao.goodsDelete(gdsNum);
 	}
+
+	// 주문 목록
+	@Override
+	public List<OrderVO> orderList() throws Exception {
+		return dao.orderList();
+	}
+
+	// 특정 주문
+	@Override
+	public List<OrderListVO> orderView(OrderVO order) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.orderView(order);
+	}
+
+	// 배송 상태
+	@Override
+	public void delivery(OrderVO order) throws Exception {
+		dao.delivery(order);
+	}
+
+	// 상품 수량 조절
+	@Override
+	public void changeStock(GoodsVO goods) throws Exception {
+		dao.changeStock(goods);
+	}
+
+	// 모든 소감(댓글)
+	@Override
+	public List<ReplyListVO> allReply() throws Exception {
+		return dao.allReply();
+	}
+
+	// 댓글 삭제
+	@Override
+	public void deleteReply(int repNum) throws Exception {
+		dao.deleteReply(repNum);
+	}
+
+
 	
 
 }

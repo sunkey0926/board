@@ -14,6 +14,14 @@ public class OrderVO {
 	private int amount;
 	private Date orderDate;
 	
+	private String delivery;
+	
+	public String getDelivery() {
+		return delivery;
+	}
+	public void setDelivery(String delivery) {
+		this.delivery = delivery;
+	}
 	public String getOrderId() {
 		return orderId;
 	}

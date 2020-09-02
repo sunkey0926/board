@@ -40,6 +40,9 @@
 									<fmt:formatNumber pattern="###,###,###" value="${orderView.amount}" />
 									원
 								</p>
+								<p>
+									<span>상태</span>${orderView.delivery}
+								</p>
 							</c:if>
 
 						</c:forEach>
